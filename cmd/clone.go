@@ -207,7 +207,7 @@ func repoExistsLocally(path string) bool {
 
 func getAppNameFromURL(url string) string {
 	withGit := strings.Split(url, "/")
-	appName := withGit[len(withGit)-1]
+	appName := withGit[len(withGit)-2]+"_"+withGit[len(withGit)-1]
 	split := strings.Split(appName, ".")
 	return strings.Join(split[0:len(split)-1], ".")
 }
